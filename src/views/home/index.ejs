@@ -24,6 +24,13 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <% if(flag == 'colab') { %>
+                    <div class="alert alert-danger">
+                        <strong><%= message %></strong>
+                    </div>
+                <% } %>
+
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto navbar-right-top">
                         <li class="nav-item dropdown nav-user">
@@ -79,7 +86,7 @@
                                 <div id="submenu-4" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Colaborador</a>
+                                            <a class="nav-link" href="register">Colaborador</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="#">Plano de Carreira</a>
@@ -135,6 +142,7 @@
                         </div>
                     </div>
                     <div class="ecommerce-widget">
+                        <!--
                         <div class="row">
                             <div class="col-md-auto">
                                 <div class="card">
@@ -217,7 +225,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

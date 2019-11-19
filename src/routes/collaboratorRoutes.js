@@ -1,0 +1,9 @@
+module.exports = function(application){
+    application.get('/register', function(request, response){
+        application.src.controllers.collaboratorController.register(application, request, response);
+    });
+
+    application.post('/register', function(request, response){
+        application.src.controllers.collaboratorController.register_collaborator(application, request, response);
+    });
+}
