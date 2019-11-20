@@ -116,13 +116,13 @@
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
-                            <h2 class="pageheader-title">Cadastro de Colaborador</h2>
+                            <h2 class="pageheader-title">Cadastro de Novo Cargo</h2>
                             <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
                                         <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Formulário</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Cadastro de Colaborador</li>
+                                        <li class="breadcrumb-item active" aria-current="page">Cadastro de Novo Cargo</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -132,31 +132,13 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
-                                <h5 class="card-header">Informações Pessoais</h5>
+                                <h5 class="card-header">Informações Gerais</h5>
                                 <div class="card-body">
-                                    <form class="needs-validation" action="/register" method="POST">
+                                    <form class="needs-validation" action="/register_role" method="POST">
                                         <div class="row">
                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                                                <label for="name">Nome Completo</label>
-                                                <input type="text" class="form-control" name="name" value="<%= formData.name %>" id="name" placeholder="Nome Completo" required>
-                                                <div class="valid-feedback">
-                                                    Parece Bom!
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-row">
-                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
-                                                <label for="birthplace">Local de Nascimento</label>
-                                                <input type="text" class="form-control" name="birthplace" id="birthplace" value="<%= formData.birthplace %>" placeholder="Local de Nascimento" required>
-                                                <div class="valid-feedback">
-                                                    Parece Bom!
-                                                </div>
-                                            </div>
-
-                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
-                                                <label for="date_of_birth">Data de Nascimento</label>
-                                                <input type="text" class="form-control" name="date_of_birth" id="date_of_birth" value="<%= formData.date_of_birth %>" placeholder="Ex.: dd/mm/aaaa" required >
+                                                <label for="name">Nome do Cargo</label>
+                                                <input type="text" class="form-control" name="name" value="<%= formData.name %>" id="name" placeholder="Ex.: Back-end" required>
                                                 <div class="valid-feedback">
                                                     Parece Bom!
                                                 </div>
@@ -165,16 +147,18 @@
 
                                         <div class="form-row">
                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                                                <label for="name_mother">Nome da Mãe</label>
-                                                <input type="text" class="form-control" name="name_mother" id="name_mother" value="<%= formData.name_mother %>" placeholder="Ex.: Maria da Silva" required>
+                                                <label for="description">Descrição</label>
+                                                <textarea class="form-control" name="description" id="description" value="<%= formData.description %>" placeholder="Ex.: Através da manutenção, suporte e acompanhamento de projetos." rows="3" required></textarea>
                                                 <div class="valid-feedback">
                                                     Parece Bom!
                                                 </div>
                                             </div>
+                                        </div>
 
+                                        <div class="form-row">
                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                                                <label for="name_father">Nome do Pai</label>
-                                                <input type="text" class="form-control" name="name_father" id="name_father" value="<%= formData.name_father %>" placeholder="Ex.: João da Silva" required>
+                                                <label for="main_task">Principal Tarefa</label>
+                                                <input type="text" class="form-control" name="main_task" id="main_task" value="<%= formData.main_task %>" placeholder="Ex.: Desenvolver" required>
                                                 <div class="valid-feedback">
                                                     Parece Bom!
                                                 </div>
@@ -182,86 +166,21 @@
                                         </div>
 
                                         <div class="form-row">
-                                            <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 mb-2">
-                                                <label for="address">Endereço</label>
-                                                <input type="text" class="form-control" name="address" id="address" value="<%= formData.address %>" placeholder="Ex.: Rua A" required>
-                                                <div class="invalid-feedback">
-                                                    Por favor, insira um endereço válido.
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 mb-2">
-                                                <label for="cep">Cep</label>
-                                                <input type="text" class="form-control" name="cep" id="cep" value="<%= formData.cep %>" placeholder="Ex.: 63500-000" required>
-                                                <div class="invalid-feedback">
-                                                    Por favor, insira um CEP válido.
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-row">
                                             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
-                                                <label for="neighborhood">Bairro</label>
-                                                <input type="text" class="form-control" name="neighborhood" id="neighborhood" value="<%= formData.neighborhood %>" placeholder="Ex.: Alto" required>
+                                                <label for="salary">Salário</label>
+                                                <input type="number" min="0.000,00" step="0.05" class="form-control" name="salary" id="salary" value="<%= formData.salary %>" placeholder="Ex.: 1.000,00" required>
                                                 <div class="invalid-feedback">
-                                                    Por favor, insira um bairro válido.
+                                                    Por favor, insira um valor válido.
                                                 </div>
                                             </div>
                                             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
-                                                <label for="city">Cidade</label>
-                                                <input type="text" class="form-control" name="city" id="city" value="<%= formData.city %>" placeholder="Ex.: Quixadá" required>
+                                                <label for="main_benefit">Principal Benefício</label>
+                                                <input type="text" class="form-control" name="main_benefit" id="main_benefit" value="<%= formData.main_benefit %>" placeholder="Ex.: Vale Transporte" required>
                                                 <div class="invalid-feedback">
-                                                    Por favor, insira uma cidade válida.
+                                                    Por favor, insira um Benefício válido.
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <div class="form-row">
-                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
-                                                <label for="marital_status">Estado Civil</label>
-                                                <input type="text" class="form-control" name="marital_status" id="marital_status" value="<%= formData.marital_status %>" placeholder="Ex.: Solteiro" required>
-                                                <div class="invalid-feedback">
-                                                    Por favor, insira um estado válido.
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 mb-2">
-                                                <label for="education_degree">Grau de Instrução</label>
-                                                <input type="text" class="form-control" name="education_degree" id="education_degree" value="<%= formData.education_degree %>" placeholder="Ex.: Médio" required>
-                                                <div class="invalid-feedback">
-                                                    Por favor, insira um grau válido.
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 mb-2">
-                                                <label for="phone">Telefone</label>
-                                                <input type="text" class="form-control" name="phone" id="phone" value="<%= formData.phone %>" placeholder="Ex.: (85) 99876-4643" required>
-                                                <div class="invalid-feedback">
-                                                    Por favor, insira um telefone válido.
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-row">
-                                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
-                                                    <label for="rg">RG</label>
-                                                    <input type="text" class="form-control" name="rg" id="rg" value="<%= formData.rg %>" placeholder="Ex.: 12345678" required>
-                                                    <div class="invalid-feedback">
-                                                        Por favor, insira um RG válido.
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 mb-2">
-                                                    <label for="shipping_date">Data de Expedição</label>
-                                                    <input type="text" class="form-control" name="shipping_date" id="shipping_date" value="<%= formData.shipping_date %>" placeholder="Ex.: 20/10/1990" required>
-                                                    <div class="invalid-feedback">
-                                                        Por favor, insira uma data válida.
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 mb-2">
-                                                    <label for="dispatcher">Orgão Expeditor</label>
-                                                    <input type="text" class="form-control" name="dispatcher" id="dispatcher" value="<%= formData.dispatcher %>" placeholder="Ex.: SSP" required>
-                                                    <div class="invalid-feedback">
-                                                        Por favor, insira um orgão válido.
-                                                    </div>
-                                                </div>
-                                            </div>
 
                                         <div class="form-row">
                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
