@@ -63,7 +63,7 @@
                                             <a class="nav-link active" href="register">Colaborador</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Plano de Carreira</a>
+                                            <a class="nav-link" href="register_career_path">Plano de Carreira</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="register_role">Novo Cargo</a>
@@ -180,21 +180,33 @@
                             <div class="card">
                                 <h5 class="card-header">Informações Pessoais</h5>
                                 <div class="card-body">
+                                <% if(formData.length > 0) { %>
+                                    <form class="needs-validation" action="/register?id=<%= validation %>" method="POST">
+                                <% } else { %>
                                     <form class="needs-validation" action="/register" method="POST">
+                                <% } %>
                                         <div class="row">
                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                                                 <label for="name">Nome Completo</label>
-                                                <input type="text" class="form-control" name="name" value="<%= formData.name %>" id="name" placeholder="Nome Completo" required>
+                                                <% if(formData.length > 0) { %>
+                                                    <input type="text" class="form-control" name="name" value="<%= formData[0].name %>" id="name" placeholder="Nome Completo" required>
+                                                <% } else { %>
+                                                    <input type="text" class="form-control" name="name" id="name" placeholder="Nome Completo" required>
+                                                <% } %>
                                                 <div class="valid-feedback">
                                                     Parece Bom!
                                                 </div>
                                             </div>
                                         </div>
-
+                                        
                                         <div class="form-row">
                                             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
                                                 <label for="birthplace">Local de Nascimento</label>
-                                                <input type="text" class="form-control" name="birthplace" id="birthplace" value="<%= formData.birthplace %>" placeholder="Local de Nascimento" required>
+                                                <% if(formData.length > 0) { %>
+                                                    <input type="text" class="form-control" name="birthplace" id="birthplace" value="<%= formData[0].birthplace %>" placeholder="Local de Nascimento" required>
+                                                <% } else { %>
+                                                    <input type="text" class="form-control" name="birthplace" id="birthplace" placeholder="Local de Nascimento" required>
+                                                <% } %>
                                                 <div class="valid-feedback">
                                                     Parece Bom!
                                                 </div>
@@ -202,7 +214,11 @@
 
                                             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
                                                 <label for="date_of_birth">Data de Nascimento</label>
-                                                <input type="text" class="form-control" name="date_of_birth" id="date_of_birth" value="<%= formData.date_of_birth %>" placeholder="Ex.: dd/mm/aaaa" required >
+                                                <% if(formData.length > 0) { %>
+                                                    <input type="text" class="form-control" name="date_of_birth" id="date_of_birth" value="<%= formData[0].date_of_birth %>" placeholder="Ex.: dd/mm/aaaa" required>
+                                                <% } else { %>
+                                                    <input type="text" class="form-control" name="date_of_birth" id="date_of_birth" placeholder="Ex.: dd/mm/aaaa" required >
+                                                <% } %>
                                                 <div class="valid-feedback">
                                                     Parece Bom!
                                                 </div>
@@ -212,7 +228,11 @@
                                         <div class="form-row">
                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                                                 <label for="name_mother">Nome da Mãe</label>
-                                                <input type="text" class="form-control" name="name_mother" id="name_mother" value="<%= formData.name_mother %>" placeholder="Ex.: Maria da Silva" required>
+                                                <% if(formData.length > 0) { %>
+                                                    <input type="text" class="form-control" name="name_mother" id="name_mother" value="<%= formData[0].name_mother %>" placeholder="Ex.: Maria da Silva" required>
+                                                <% } else { %>
+                                                    <input type="text" class="form-control" name="name_mother" id="name_mother" placeholder="Ex.: Maria da Silva" required>
+                                                <% } %>
                                                 <div class="valid-feedback">
                                                     Parece Bom!
                                                 </div>
@@ -220,7 +240,11 @@
 
                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                                                 <label for="name_father">Nome do Pai</label>
-                                                <input type="text" class="form-control" name="name_father" id="name_father" value="<%= formData.name_father %>" placeholder="Ex.: João da Silva" required>
+                                                <% if(formData.length > 0) { %>
+                                                    <input type="text" class="form-control" name="name_father" id="name_father" value="<%= formData[0].name_father %>" placeholder="Ex.: João da Silva" required>
+                                                <% } else { %>
+                                                    <input type="text" class="form-control" name="name_father" id="name_father" placeholder="Ex.: João da Silva" required>
+                                                <% } %>
                                                 <div class="valid-feedback">
                                                     Parece Bom!
                                                 </div>
@@ -230,14 +254,22 @@
                                         <div class="form-row">
                                             <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 mb-2">
                                                 <label for="address">Endereço</label>
-                                                <input type="text" class="form-control" name="address" id="address" value="<%= formData.address %>" placeholder="Ex.: Rua A" required>
+                                                <% if(formData.length > 0) { %>
+                                                    <input type="text" class="form-control" name="address" id="address" value="<%= formData[0].address %>" placeholder="Ex.: Rua A" required>
+                                                <% } else { %>
+                                                    <input type="text" class="form-control" name="address" id="address" placeholder="Ex.: Rua A" required>
+                                                <% } %>
                                                 <div class="invalid-feedback">
                                                     Por favor, insira um endereço válido.
                                                 </div>
                                             </div>
                                             <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 mb-2">
                                                 <label for="cep">Cep</label>
-                                                <input type="text" class="form-control" name="cep" id="cep" value="<%= formData.cep %>" placeholder="Ex.: 63500-000" required>
+                                                <% if(formData.length > 0) { %>
+                                                    <input type="text" class="form-control" name="cep" id="cep" value="<%= formData[0].cep %>" placeholder="Ex.: 63500-000" required>
+                                                <% } else { %>
+                                                    <input type="text" class="form-control" name="cep" id="cep" placeholder="Ex.: 63500-000" required>
+                                                <% } %>
                                                 <div class="invalid-feedback">
                                                     Por favor, insira um CEP válido.
                                                 </div>
@@ -247,14 +279,22 @@
                                         <div class="form-row">
                                             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
                                                 <label for="neighborhood">Bairro</label>
-                                                <input type="text" class="form-control" name="neighborhood" id="neighborhood" value="<%= formData.neighborhood %>" placeholder="Ex.: Alto" required>
+                                                <% if(formData.length > 0) { %>
+                                                    <input type="text" class="form-control" name="neighborhood" id="neighborhood" value="<%= formData[0].neighborhood %>" placeholder="Ex.: Alto" required>
+                                                <% } else { %>
+                                                    <input type="text" class="form-control" name="neighborhood" id="neighborhood" placeholder="Ex.: Alto" required>
+                                                <% } %>
                                                 <div class="invalid-feedback">
                                                     Por favor, insira um bairro válido.
                                                 </div>
                                             </div>
                                             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
                                                 <label for="city">Cidade</label>
-                                                <input type="text" class="form-control" name="city" id="city" value="<%= formData.city %>" placeholder="Ex.: Quixadá" required>
+                                                <% if(formData.length > 0) { %>
+                                                    <input type="text" class="form-control" name="city" id="city" value="<%= formData[0].city %>" placeholder="Ex.: Quixadá" required>
+                                                <% } else { %>
+                                                    <input type="text" class="form-control" name="city" id="city" placeholder="Ex.: Quixadá" required>
+                                                <% } %>
                                                 <div class="invalid-feedback">
                                                     Por favor, insira uma cidade válida.
                                                 </div>
@@ -264,21 +304,33 @@
                                         <div class="form-row">
                                             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
                                                 <label for="marital_status">Estado Civil</label>
-                                                <input type="text" class="form-control" name="marital_status" id="marital_status" value="<%= formData.marital_status %>" placeholder="Ex.: Solteiro" required>
+                                                <% if(formData.length > 0) { %>
+                                                    <input type="text" class="form-control" name="marital_status" id="marital_status" value="<%= formData[0].marital_status %>" placeholder="Ex.: Solteiro" required>
+                                                <% } else { %>
+                                                    <input type="text" class="form-control" name="marital_status" id="marital_status" placeholder="Ex.: Solteiro" required>
+                                                <% } %>
                                                 <div class="invalid-feedback">
                                                     Por favor, insira um estado válido.
                                                 </div>
                                             </div>
                                             <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 mb-2">
                                                 <label for="salary">Salário</label>
-                                                <input type="number" min="0.000,00" step="0.05" class="form-control" name="salary" id="salary" value="<%= formData.salary %>" placeholder="Ex.: 1.000,00" required>
+                                                <% if(formData.length > 0) { %>
+                                                    <input type="number" min="0.000,00" step="0.05" class="form-control" name="salary" id="salary" value="<%= formData[0].salary %>" placeholder="Ex.: 1.000,00" required>
+                                                <% } else { %>
+                                                    <input type="number" min="0.000,00" step="0.05" class="form-control" name="salary" id="salary" placeholder="Ex.: 1.000,00" required>
+                                                <% } %>
                                                 <div class="invalid-feedback">
                                                     Por favor, insira um salário válido.
                                                 </div>
                                             </div>
                                             <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 mb-2">
                                                 <label for="phone">Telefone</label>
-                                                <input type="text" class="form-control" name="phone" id="phone" value="<%= formData.phone %>" placeholder="Ex.: (85) 99876-4643" required>
+                                                <% if(formData.length > 0) { %>
+                                                    <input type="text" class="form-control" name="phone" id="phone" value="<%= formData[0].phone %>" placeholder="Ex.: (85) 99876-4643" required>
+                                                <% } else { %>
+                                                    <input type="text" class="form-control" name="phone" id="phone" placeholder="Ex.: (85) 99876-4643" required>
+                                                <% } %>
                                                 <div class="invalid-feedback">
                                                     Por favor, insira um telefone válido.
                                                 </div>
@@ -288,21 +340,33 @@
                                         <div class="form-row">
                                                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
                                                     <label for="rg">RG</label>
-                                                    <input type="text" class="form-control" name="rg" id="rg" value="<%= formData.rg %>" placeholder="Ex.: 12345678" required>
+                                                    <% if(formData.length > 0) { %>
+                                                        <input type="text" class="form-control" name="rg" id="rg" value="<%= formData[0].rg %>" placeholder="Ex.: 12345678" required>
+                                                    <% } else { %>
+                                                        <input type="text" class="form-control" name="rg" id="rg" placeholder="Ex.: 12345678" required>
+                                                    <% } %>
                                                     <div class="invalid-feedback">
                                                         Por favor, insira um RG válido.
                                                     </div>
                                                 </div>
                                                 <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 mb-2">
                                                     <label for="shipping_date">Data de Expedição</label>
-                                                    <input type="text" class="form-control" name="shipping_date" id="shipping_date" value="<%= formData.shipping_date %>" placeholder="Ex.: 20/10/1990" required>
+                                                    <% if(formData.length > 0) { %>
+                                                        <input type="text" class="form-control" name="shipping_date" id="shipping_date" value="<%= formData[0].shipping_date %>" placeholder="Ex.: 20/10/1990" required>
+                                                    <% } else { %>
+                                                        <input type="text" class="form-control" name="shipping_date" id="shipping_date" placeholder="Ex.: 20/10/1990" required>
+                                                    <% } %>
                                                     <div class="invalid-feedback">
                                                         Por favor, insira uma data válida.
                                                     </div>
                                                 </div>
                                                 <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 mb-2">
                                                     <label for="dispatcher">Orgão Expeditor</label>
-                                                    <input type="text" class="form-control" name="dispatcher" id="dispatcher" value="<%= formData.dispatcher %>" placeholder="Ex.: SSP" required>
+                                                    <% if(formData.length > 0) { %>
+                                                        <input type="text" class="form-control" name="dispatcher" id="dispatcher" value="<%= formData[0].dispatcher %>" placeholder="Ex.: SSP" required>
+                                                    <% } else { %>
+                                                        <input type="text" class="form-control" name="dispatcher" id="dispatcher" placeholder="Ex.: SSP" required>
+                                                    <% } %>
                                                     <div class="invalid-feedback">
                                                         Por favor, insira um orgão válido.
                                                     </div>
@@ -311,7 +375,11 @@
 
                                         <div class="form-row">
                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                                <button class="btn btn-primary" type="submit">Cadastrar</button>
+                                                <% if(formData.length > 0) { %>
+                                                    <button class="btn btn-primary" type="submit">Atualizar</button>
+                                                <% } else { %>
+                                                    <button class="btn btn-primary" type="submit">Cadastrar</button>
+                                                <% } %>
                                             </div>
                                         </div>
                                     </form>

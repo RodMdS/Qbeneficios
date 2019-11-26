@@ -69,7 +69,7 @@
                                             <a class="nav-link" href="register">Colaborador</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Plano de Carreira</a>
+                                            <a class="nav-link" href="register_career_path">Plano de Carreira</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="register_role">Novo Cargo</a>
@@ -83,7 +83,7 @@
                                 <div id="submenu-5" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="register">Colaborador</a>
+                                            <a class="nav-link" href="update_collaborator">Colaborador</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="register_career_path">Plano de Carreira</a>
@@ -103,7 +103,7 @@
                                             <a class="nav-link" href="register">Colaborador</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Plano de Carreira</a>
+                                            <a class="nav-link" href="register_career_path">Plano de Carreira</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="register_role">Cargo</a>
@@ -192,7 +192,11 @@
                                     <div class="card-body">
                                         <h5 class="text-muted">Maior Salário</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1">R$: <%= collaborator[0].salary %></h1>
+                                            <% if(collaborator.length > 0) { %>
+                                                <h1 class="mb-1">R$: <%= collaborator[0].salary %></h1>
+                                            <% } else { %>
+                                                <h1 class="mb-1">R$: 0</h1>
+                                            <% } %>
                                         </div>
                                         <div class="metric-label d-inline-block float-right text-success font-weight-bold">
                                             <span><i class="fa fa-fw fa-arrow-up"></i></span><span></span>
@@ -207,7 +211,11 @@
                                     <div class="card-body">
                                         <h5 class="text-muted">Quantidade de Colaboradores</h5>
                                         <div class="metric-value d-inline-block">
-                                            <h1 class="mb-1"> <%= collaborator[0].count %></h1>
+                                            <% if(collaborator.length > 0) { %>
+                                                <h1 class="mb-1"> <%= collaborator[0].count %></h1>
+                                            <% } else { %>
+                                                <h1 class="mb-1"> 0 </h1>
+                                            <% } %>
                                         </div>
                                         <div class="metric-label d-inline-block float-right text-success font-weight-bold">
                                             <span><i class="fa fa-fw fa-arrow-up"></i></span><span></span>
@@ -242,10 +250,6 @@
     <!-- main js -->
     <script src="assets/libs/js/main-js.js"></script>
 
-    <script>
-    //    var aux = "<%- collaborator[0].salary %>";
-    //    alert(aux);
-    </script>
     
 </body>
  
