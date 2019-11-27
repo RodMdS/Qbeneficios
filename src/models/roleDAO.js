@@ -10,6 +10,15 @@ RoleDAO.prototype.insertRole = function(role){
     });
 }
 
+RoleDAO.prototype.getRolesByPathName = function(path, response) {
+    this._request.db.collection("Roles", function(error, collection) {
+        collection.find({"path_name": path.name}).toArray(function(err, results) {
+            console.log("roles: %s", JSON.stringify(results));
+            response.render("home/show_carrer_path", {path: path, roles: results});
+        });
+    });
+}
+
 module.exports = function(){
     return RoleDAO;
 }
