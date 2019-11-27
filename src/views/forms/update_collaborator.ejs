@@ -56,7 +56,7 @@
                             </li>
                             
                             <li class="nav-item ">
-                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fas fa-address-book"></i>Cadastros</a>
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fas fa-address-book"></i>Cadastros</a>
                                 <div id="submenu-4" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
@@ -73,11 +73,11 @@
                             </li>
 
                             <li class="nav-item ">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-4"><i class="far fa-edit"></i>Atualizar Cadastro</a>
+                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-4"><i class="far fa-edit"></i>Atualizar Cadastro</a>
                                 <div id="submenu-5" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="register">Colaborador</a>
+                                            <a class="nav-link" href="update_collaborator">Colaborador</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="register_career_path">Plano de Carreira</a>
@@ -162,13 +162,13 @@
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
-                            <h2 class="pageheader-title">Cadastro de Novo Cargo</h2>
+                            <h2 class="pageheader-title">Atualizar Cadastro de Colaborador</h2>
                             <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
                                         <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Formulário</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Cadastro de Novo Cargo</li>
+                                        <li class="breadcrumb-item active" aria-current="page">Atualizar Cadastro de Colaborador</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -178,79 +178,60 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
-                                <h5 class="card-header">Informações Gerais</h5>
+                                <h5 class="card-header">Buscar o Colaborador pelo Nome</h5>
                                 <div class="card-body">
-                                    <form class="needs-validation" action="/register_role" method="POST">
+                                    <form class="needs-validation" action="/search?tag=upd" method="POST">
                                         <div class="row">
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                                                <label for="name">Nome do Cargo</label>
-                                                <input type="text" class="form-control" name="name" value="<%= formData.name %>" id="name" placeholder="Ex.: Back-end" required>
-                                                <div class="valid-feedback">
-                                                    Parece Bom!
-                                                </div>
+                                            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 mb-2">
+                                                <label for="name">Nome do Colaborador</label>
+                                                <input type="text" class="form-control" name="name" id="name" placeholder="Ex.: João" required>
                                             </div>
-                                        </div>
 
-                                        <div class="form-row">
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                                                <label for="description">Descrição</label>
-                                                <textarea class="form-control" name="description" id="description" value="<%= formData.description %>" placeholder="Ex.: Através da manutenção, suporte e acompanhamento de projetos." rows="3" required></textarea>
-                                                <div class="valid-feedback">
-                                                    Parece Bom!
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-row">
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                                                <label for="main_task">Principal Tarefa</label>
-                                                <input type="text" class="form-control" name="main_task" id="main_task" value="<%= formData.main_task %>" placeholder="Ex.: Desenvolver" required>
-                                                <div class="valid-feedback">
-                                                    Parece Bom!
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-row">
-                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
-                                                <label for="salary">Salário</label>
-                                                <input type="number" min="0.000,00" step="0.05" class="form-control" name="salary" id="salary" value="<%= formData.salary %>" placeholder="Ex.: 1.000,00" required>
-                                                <div class="invalid-feedback">
-                                                    Por favor, insira um valor válido.
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
-                                                <label for="main_benefit">Principal Benefício</label>
-                                                <input type="text" class="form-control" name="main_benefit" id="main_benefit" value="<%= formData.main_benefit %>" placeholder="Ex.: Vale Transporte" required>
-                                                <div class="invalid-feedback">
-                                                    Por favor, insira um Benefício válido.
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-row">
-                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
-                                                <label for="carrerPath">Plano de Carreira</label>
-                                                <input type="text" id="getPaths" value="<%= paths %>" hidden>
-                                                <!--<input type="" class="form-control" name="salary" id="carrerPath" value="<%= formData.carrerPath %>" required>
-                                                <div class="invalid-feedback">
-                                                    Por favor, insira um valor válido.
-                                                </div>-->
-                                                <select id="carrerPath" name="carrerPath" class="form-control" value="" required>
-                                                </select> 
-                                            </div>
-                                        </div>
-
-                                        <div class="form-row">
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                                <button class="btn btn-primary" type="submit">Cadastrar</button>
+                                            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 mb-2" style="margin-top: 30px;">
+                                                <button class="btn btn-success" type="submit">Buscar</button>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
-                    </div>           
+                    </div> 
+
+                    <div class="row">
+                        <% if(list.length > 0) { %>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <table class="table table-hover">
+                                    <thead class="table-danger">
+                                      <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">NOME</th>
+                                        <th scope="col">LOCAL DE NASCIMENTO</th>
+                                        <th scope="col">DATA DE NASCIMENTO</th>
+                                        <th scope="col">CEP</th>
+                                        <th scope="col">CIDADE</th>
+                                        <th scope="col">RG</th>
+                                        <th scope="col">AÇÃO</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for(var i = 0; i < list.length; i++) { %>
+                                            <tr>
+                                                <th scope="row"><%= i + 1 %></th>
+                                                <td><%= list[i].name %></td>
+                                                <td><%= list[i].birthplace %></td>
+                                                <td><%= list[i].date_of_birth %></td>
+                                                <td><%= list[i].cep %></td>
+                                                <td><%= list[i].city %></td>
+                                                <td><%= list[i].rg %></td>
+                                                <td><a href="/update_coll?id=<%= list[i]._id %>">ATUALIZAR</a></td>
+                                            </tr>
+                                        <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <% } %>
+                    </div>
+                            
             </div>
             <div class="footer">
                 <div class="container-fluid">
@@ -273,20 +254,6 @@
     <script src="assets/libs/js/masks.js"></script> 
     <script>
         $('#form').parsley();
-        var data = document.getElementById("getPaths").value;
-        var paths = JSON.parse(data);
-        $('#carrerPath').contents().remove();
-        var defaultOption = $('<option/>');
-        defaultOption.attr('label', "Escolha um plano");
-        defaultOption.attr('selected', true);
-        defaultOption.appendTo($('#carrerPath'));
-        for(var j = 0; j < paths.length; j++) {
-            var newOption = $('<option/>');
-            newOption.attr('label', paths[j].name);
-            newOption.attr('value', paths[j].name);
-            console.log(newOption);
-            newOption.appendTo($('#carrerPath'));
-        }
     </script>
     
 </body>
