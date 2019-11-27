@@ -10,11 +10,26 @@ RoleDAO.prototype.insertRole = function(role){
     });
 }
 
-RoleDAO.prototype.getRolesByPathName = function(path, response) {
+RoleDAO.prototype.getRolesByPathId = function(path, response) {
     this._request.db.collection("Roles", function(error, collection) {
-        collection.find({"path_name": path.name}).toArray(function(err, results) {
-            console.log("roles: %s", JSON.stringify(results));
-            response.render("home/show_carrer_path", {path: path, roles: results});
+        collection.find({"path_id": path._id}).toArray(function(err, results) {
+            console.log("Roles: %s", JSON.stringify(results));
+            response.render("forms/register_career_path?", {validation: id, formData: path});
+        });
+    });
+}
+
+RoleDAO.prototype.getRolesByPathName = function(path, tag, response) {
+    this._request.db.collection("Roles", function(error, collection) {
+        collection.find({"path_id": path._id}).toArray(function(err, results) {
+            var temp_aux = '';
+            if(tag === 'del'){
+                temp_aux = 'forms/remove_carrer_path';
+            } else {
+                temp_aux = 'forms/update_carrer_path';
+            }
+            console.log("Roles: %s", JSON.stringify(results));
+            response.render(temp_aux, {path: path, roles: results});
         });
     });
 }
