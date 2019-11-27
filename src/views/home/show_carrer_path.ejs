@@ -97,7 +97,6 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="#">Login</a>
                                         </li>
-                                       
                                         <li class="nav-item">
                                             <a class="nav-link" href="#">Calendário</a>
                                         </li>
@@ -134,7 +133,7 @@
                             <div class="card">
                                 <h5 class="card-header">Informações Gerais</h5>
                                 <div class="card-body">
-                                    <form class="needs-validation" action="/register_role" method="POST">
+                                    <!--<form class="needs-validation" action="/register_role" method="POST">
                                         <div class="row">
                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
                                                 <label for="name">Nome do Cargo</label>
@@ -186,10 +185,7 @@
                                             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
                                                 <label for="carrerPath">Plano de Carreira</label>
                                                 <input type="text" id="getPaths" value="<%= paths %>" hidden>
-                                                <!--<input type="" class="form-control" name="salary" id="carrerPath" value="<%= formData.carrerPath %>" required>
-                                                <div class="invalid-feedback">
-                                                    Por favor, insira um valor válido.
-                                                </div>-->
+                                                
                                                 <select id="carrerPath" name="carrerPath" class="form-control" value="" required>
                                                 </select> 
                                             </div>
@@ -200,7 +196,7 @@
                                                 <button class="btn btn-primary" type="submit">Cadastrar</button>
                                             </div>
                                         </div>
-                                    </form>
+                                    </form>-->
                                 </div>
                             </div>
                         </div>
@@ -227,20 +223,6 @@
     <script src="assets/libs/js/masks.js"></script> 
     <script>
         $('#form').parsley();
-        var data = document.getElementById("getPaths").value;
-        var paths = JSON.parse(data);
-        $('#carrerPath').contents().remove();
-        var defaultOption = $('<option/>');
-        defaultOption.attr('label', "Escolha um plano");
-        defaultOption.attr('selected', true);
-        defaultOption.appendTo($('#carrerPath'));
-        for(var j = 0; j < paths.length; j++) {
-            var newOption = $('<option/>');
-            newOption.attr('label', paths[j].name);
-            newOption.attr('value', paths[j].name);
-            console.log(newOption);
-            newOption.appendTo($('#carrerPath'));
-        }
     </script>
     
 </body>

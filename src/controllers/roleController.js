@@ -1,9 +1,15 @@
-module.exports.role = function(application, request, response){
-    response.render('forms/register_role', {validation: {}, formData: {}});
+module.exports.role = function(application, request, response) {
+    application.src.controllers.carrerPathController.getCarrerPaths(application, request, response);
 }
 
 module.exports.register_role = function(application, request, response){
-    var formData = request.body;
+    console.log(request.body);
+    var formData = {"name": request.body.name,
+                    "description": request.body.description,
+                    "main_task": request.body.main_task,
+                    "salary": request.body.salary,
+                    "main_benefit": request.body.main_benefit,
+                    "path_name": request.body.carrerPath};
     var errors = request.validationErrors();
 
     if(errors){
