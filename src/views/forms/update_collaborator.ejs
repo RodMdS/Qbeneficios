@@ -9,10 +9,6 @@
     <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/libs/css/style.css">
     <link rel="stylesheet" href="assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
-    <link rel="stylesheet" href="assets/vendor/charts/morris-bundle/morris.css">
-    <link rel="stylesheet" href="assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="assets/vendor/charts/c3charts/c3.css">
-    <link rel="stylesheet" href="assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
     <title>Q-benefícios</title>
 </head>
 
@@ -24,7 +20,6 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto navbar-right-top">
                         <li class="nav-item dropdown nav-user">
@@ -56,11 +51,10 @@
                             <li class="nav-divider">
                                 Menu
                             </li>
-                            
                             <li class="nav-item ">
-                                <a class="nav-link active" href="\"><i class="fas fa-chart-line"></i>Dashboard</a>
+                                <a class="nav-link" href="/"><i class="fas fa-chart-line"></i>Dashboard</a>
                             </li>
-                        
+                            
                             <li class="nav-item ">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fas fa-address-book"></i>Cadastros</a>
                                 <div id="submenu-4" class="collapse submenu" style="">
@@ -72,14 +66,14 @@
                                             <a class="nav-link" href="register_career_path">Plano de Carreira</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="register_role">Novo Cargo</a>
+                                            <a class="nav-link active" href="register_role">Novo Cargo</a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
 
                             <li class="nav-item ">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-4"><i class="far fa-edit"></i>Atualizar Cadastro</a>
+                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-4"><i class="far fa-edit"></i>Atualizar Cadastro</a>
                                 <div id="submenu-5" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
@@ -100,10 +94,10 @@
                                 <div id="submenu-6" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="remove_collaborator">Colaborador</a>
+                                            <a class="nav-link" href="register">Colaborador</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="register_career_path">Plano de Carreira</a>
+                                            <a class="nav-link" href="#">Plano de Carreira</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="register_role">Cargo</a>
@@ -115,7 +109,6 @@
                             <li class="nav-divider">
                                 Outros
                             </li>
-
                             <li class="nav-item">
                                 <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-7" aria-controls="submenu-6"><i class="fas fa-clipboard-list"></i> Relatórios </a>
                                 <div id="submenu-7" class="collapse submenu" style="">
@@ -165,75 +158,86 @@
         </div>
 
         <div class="dashboard-wrapper">
-            <div class="dashboard-ecommerce">
-                <div class="container-fluid dashboard-content ">
+            <div class="container-fluid  dashboard-content">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">Atualizar Cadastro de Colaborador</h2>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Formulário</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Atualizar Cadastro de Colaborador</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="page-header">
-                                <h2 class="pageheader-title">Informações Gerais</h2>
-                                
-                                <div class="page-breadcrumb">
-                                    <nav aria-label="breadcrumb">
-                                        <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                                            <li class="breadcrumb-item active" aria-current="page">Informações</li>
-                                        </ol>
-                                    </nav>
+                            <div class="card">
+                                <h5 class="card-header">Buscar o Colaborador pelo Nome</h5>
+                                <div class="card-body">
+                                    <form class="needs-validation" action="/search?tag=upd" method="POST">
+                                        <div class="row">
+                                            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 mb-2">
+                                                <label for="name">Nome do Colaborador</label>
+                                                <input type="text" class="form-control" name="name" id="name" placeholder="Ex.: João" required>
+                                            </div>
+
+                                            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 mb-2" style="margin-top: 30px;">
+                                                <button class="btn btn-success" type="submit">Buscar</button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> 
 
-                    <div class="ecommerce-widget">
-
-                        <div class="row">
-                            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="text-muted">Maior Salário</h5>
-                                        <div class="metric-value d-inline-block">
-                                            <% if(collaborator.length > 0) { %>
-                                                <h1 class="mb-1">R$: <%= collaborator[0].salary %></h1>
-                                            <% } else { %>
-                                                <h1 class="mb-1">R$: 0</h1>
-                                            <% } %>
-                                        </div>
-                                        <div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                                            <span><i class="fa fa-fw fa-arrow-up"></i></span><span></span>
-                                        </div>
-                                    </div>
-                                    <div id="sparkline-revenue"></div>
-                                </div>
+                    <div class="row">
+                        <% if(list.length > 0) { %>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <table class="table table-hover">
+                                    <thead class="table-danger">
+                                      <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">NOME</th>
+                                        <th scope="col">LOCAL DE NASCIMENTO</th>
+                                        <th scope="col">DATA DE NASCIMENTO</th>
+                                        <th scope="col">CEP</th>
+                                        <th scope="col">CIDADE</th>
+                                        <th scope="col">RG</th>
+                                        <th scope="col">AÇÃO</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for(var i = 0; i < list.length; i++) { %>
+                                            <tr>
+                                                <th scope="row"><%= i + 1 %></th>
+                                                <td><%= list[i].name %></td>
+                                                <td><%= list[i].birthplace %></td>
+                                                <td><%= list[i].date_of_birth %></td>
+                                                <td><%= list[i].cep %></td>
+                                                <td><%= list[i].city %></td>
+                                                <td><%= list[i].rg %></td>
+                                                <td><a href="/update_coll?id=<%= list[i]._id %>">ATUALIZAR</a></td>
+                                            </tr>
+                                        <% } %>
+                                    </tbody>
+                                </table>
                             </div>
-
-                            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="text-muted">Quantidade de Colaboradores</h5>
-                                        <div class="metric-value d-inline-block">
-                                            <% if(collaborator.length > 0) { %>
-                                                <h1 class="mb-1"> <%= collaborator[0].count %></h1>
-                                            <% } else { %>
-                                                <h1 class="mb-1"> 0 </h1>
-                                            <% } %>
-                                        </div>
-                                        <div class="metric-label d-inline-block float-right text-success font-weight-bold">
-                                            <span><i class="fa fa-fw fa-arrow-up"></i></span><span></span>
-                                        </div>
-                                    </div>
-                                    <div id="sparkline-revenue2"></div>
-                                </div>
-                            </div>
-                        </div>
+                        <% } %>
                     </div>
-
-                </div>
+                            
             </div>
             <div class="footer">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                             Copyright © 2019 Concept. All rights reserved.
+                            Copyright © 2018 Concept. All rights reserved.
                         </div>
                     </div>
                 </div>
@@ -241,15 +245,16 @@
         </div>
     </div>
 
-    <!-- jquery 3.3.1 -->
     <script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
-    <!-- bootstap bundle js -->
+    <script src="assets/vendor/inputmask/js/jquery.inputmask.bundle.js"></script>
+    <script src="assets/vendor/parsley/parsley.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
-    <!-- slimscroll js -->
     <script src="assets/vendor/slimscroll/jquery.slimscroll.js"></script>
-    <!-- main js -->
     <script src="assets/libs/js/main-js.js"></script>
-
+    <script src="assets/libs/js/masks.js"></script> 
+    <script>
+        $('#form').parsley();
+    </script>
     
 </body>
  

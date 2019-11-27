@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="pt-br">
+ 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/libs/css/style.css">
+    <link rel="stylesheet" href="assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <title>Q-benefícios</title>
+</head>
+
+<body>
+    <div class="dashboard-main-wrapper">
+        <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="/">Q-benefícios</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto navbar-right-top">
+                        <li class="nav-item dropdown nav-user">
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/avatar-1.jpg" alt="" class="user-avatar-md rounded-circle"></a>
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+                                <div class="nav-user-info">
+                                    <h5 class="mb-0 text-white nav-user-name">John Abraham </h5>
+                                    <span class="status"></span><span class="ml-2">Disponível</span>
+                                </div>
+                                <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Conta</a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Configurações</a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Sair</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="nav-left-sidebar sidebar-dark">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="/"><i class="fas fa-chart-line"></i>Dashboard </a>
+                            </li>
+                            
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fas fa-address-book"></i>Cadastros</a>
+                                <div id="submenu-4" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="register">Colaborador</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="register_career_path">Plano de Carreira</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="register_role">Novo Cargo</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="nav-item ">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-4"><i class="far fa-edit"></i>Atualizar Cadastro</a>
+                                <div id="submenu-5" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="register">Colaborador</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="register_career_path">Plano de Carreira</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="register_role">Cargo</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="nav-item ">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-4"><i class="fas fa-window-close"></i>Remover Cadastro</a>
+                                <div id="submenu-6" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="register">Colaborador</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Plano de Carreira</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="register_role">Cargo</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            
+                            <li class="nav-divider">
+                                Outros
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-7" aria-controls="submenu-6"><i class="fas fa-clipboard-list"></i> Relatórios </a>
+                                <div id="submenu-7" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Geral</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Individual</a>
+                                        </li>
+                                       
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Apenas Colaboradores</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Apenas Cargos</a>
+                                        </li>
+
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Apenas Planos de Carreira</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-8" aria-controls="submenu-6"><i class="fas fa-chart-pie"></i> Grafícos </a>
+                                <div id="submenu-8" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Colaboradores</a>
+                                        </li>
+                                       
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Cargos</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="dashboard-wrapper">
+            <div class="container-fluid  dashboard-content">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">Cadastro de Colaborador</h2>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Formulário</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Cadastro de Colaborador</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Informações Pessoais</h5>
+                                <div class="card-body">
+                                <% if(formData.length > 0) { %>
+                                    <form class="needs-validation" action="/register?id=<%= validation %>" method="POST">
+                                <% } else { %>
+                                    <form class="needs-validation" action="/register" method="POST">
+                                <% } %>
+                                        <div class="row">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="name">Nome Completo</label>
+                                                <% if(formData.length > 0) { %>
+                                                    <input type="text" class="form-control" name="name" value="<%= formData[0].name %>" id="name" placeholder="Nome Completo" required>
+                                                <% } else { %>
+                                                    <input type="text" class="form-control" name="name" id="name" placeholder="Nome Completo" required>
+                                                <% } %>
+                                                <div class="valid-feedback">
+                                                    Parece Bom!
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-row">
+                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
+                                                <label for="birthplace">Local de Nascimento</label>
+                                                <% if(formData.length > 0) { %>
+                                                    <input type="text" class="form-control" name="birthplace" id="birthplace" value="<%= formData[0].birthplace %>" placeholder="Local de Nascimento" required>
+                                                <% } else { %>
+                                                    <input type="text" class="form-control" name="birthplace" id="birthplace" placeholder="Local de Nascimento" required>
+                                                <% } %>
+                                                <div class="valid-feedback">
+                                                    Parece Bom!
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
+                                                <label for="date_of_birth">Data de Nascimento</label>
+                                                <% if(formData.length > 0) { %>
+                                                    <input type="text" class="form-control" name="date_of_birth" id="date_of_birth" value="<%= formData[0].date_of_birth %>" placeholder="Ex.: dd/mm/aaaa" required>
+                                                <% } else { %>
+                                                    <input type="text" class="form-control" name="date_of_birth" id="date_of_birth" placeholder="Ex.: dd/mm/aaaa" required >
+                                                <% } %>
+                                                <div class="valid-feedback">
+                                                    Parece Bom!
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="name_mother">Nome da Mãe</label>
+                                                <% if(formData.length > 0) { %>
+                                                    <input type="text" class="form-control" name="name_mother" id="name_mother" value="<%= formData[0].name_mother %>" placeholder="Ex.: Maria da Silva" required>
+                                                <% } else { %>
+                                                    <input type="text" class="form-control" name="name_mother" id="name_mother" placeholder="Ex.: Maria da Silva" required>
+                                                <% } %>
+                                                <div class="valid-feedback">
+                                                    Parece Bom!
+                                                </div>
+                                            </div>
+
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                                <label for="name_father">Nome do Pai</label>
+                                                <% if(formData.length > 0) { %>
+                                                    <input type="text" class="form-control" name="name_father" id="name_father" value="<%= formData[0].name_father %>" placeholder="Ex.: João da Silva" required>
+                                                <% } else { %>
+                                                    <input type="text" class="form-control" name="name_father" id="name_father" placeholder="Ex.: João da Silva" required>
+                                                <% } %>
+                                                <div class="valid-feedback">
+                                                    Parece Bom!
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 mb-2">
+                                                <label for="address">Endereço</label>
+                                                <% if(formData.length > 0) { %>
+                                                    <input type="text" class="form-control" name="address" id="address" value="<%= formData[0].address %>" placeholder="Ex.: Rua A" required>
+                                                <% } else { %>
+                                                    <input type="text" class="form-control" name="address" id="address" placeholder="Ex.: Rua A" required>
+                                                <% } %>
+                                                <div class="invalid-feedback">
+                                                    Por favor, insira um endereço válido.
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 mb-2">
+                                                <label for="cep">Cep</label>
+                                                <% if(formData.length > 0) { %>
+                                                    <input type="text" class="form-control" name="cep" id="cep" value="<%= formData[0].cep %>" placeholder="Ex.: 63500-000" required>
+                                                <% } else { %>
+                                                    <input type="text" class="form-control" name="cep" id="cep" placeholder="Ex.: 63500-000" required>
+                                                <% } %>
+                                                <div class="invalid-feedback">
+                                                    Por favor, insira um CEP válido.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
+                                                <label for="neighborhood">Bairro</label>
+                                                <% if(formData.length > 0) { %>
+                                                    <input type="text" class="form-control" name="neighborhood" id="neighborhood" value="<%= formData[0].neighborhood %>" placeholder="Ex.: Alto" required>
+                                                <% } else { %>
+                                                    <input type="text" class="form-control" name="neighborhood" id="neighborhood" placeholder="Ex.: Alto" required>
+                                                <% } %>
+                                                <div class="invalid-feedback">
+                                                    Por favor, insira um bairro válido.
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
+                                                <label for="city">Cidade</label>
+                                                <% if(formData.length > 0) { %>
+                                                    <input type="text" class="form-control" name="city" id="city" value="<%= formData[0].city %>" placeholder="Ex.: Quixadá" required>
+                                                <% } else { %>
+                                                    <input type="text" class="form-control" name="city" id="city" placeholder="Ex.: Quixadá" required>
+                                                <% } %>
+                                                <div class="invalid-feedback">
+                                                    Por favor, insira uma cidade válida.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
+                                                <label for="marital_status">Estado Civil</label>
+                                                <% if(formData.length > 0) { %>
+                                                    <input type="text" class="form-control" name="marital_status" id="marital_status" value="<%= formData[0].marital_status %>" placeholder="Ex.: Solteiro" required>
+                                                <% } else { %>
+                                                    <input type="text" class="form-control" name="marital_status" id="marital_status" placeholder="Ex.: Solteiro" required>
+                                                <% } %>
+                                                <div class="invalid-feedback">
+                                                    Por favor, insira um estado válido.
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 mb-2">
+                                                <label for="salary">Salário</label>
+                                                <% if(formData.length > 0) { %>
+                                                    <input type="number" min="0.000,00" step="0.05" class="form-control" name="salary" id="salary" value="<%= formData[0].salary %>" placeholder="Ex.: 1.000,00" required>
+                                                <% } else { %>
+                                                    <input type="number" min="0.000,00" step="0.05" class="form-control" name="salary" id="salary" placeholder="Ex.: 1.000,00" required>
+                                                <% } %>
+                                                <div class="invalid-feedback">
+                                                    Por favor, insira um salário válido.
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 mb-2">
+                                                <label for="phone">Telefone</label>
+                                                <% if(formData.length > 0) { %>
+                                                    <input type="text" class="form-control" name="phone" id="phone" value="<%= formData[0].phone %>" placeholder="Ex.: (85) 99876-4643" required>
+                                                <% } else { %>
+                                                    <input type="text" class="form-control" name="phone" id="phone" placeholder="Ex.: (85) 99876-4643" required>
+                                                <% } %>
+                                                <div class="invalid-feedback">
+                                                    Por favor, insira um telefone válido.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
+                                                    <label for="rg">RG</label>
+                                                    <% if(formData.length > 0) { %>
+                                                        <input type="text" class="form-control" name="rg" id="rg" value="<%= formData[0].rg %>" placeholder="Ex.: 12345678" required>
+                                                    <% } else { %>
+                                                        <input type="text" class="form-control" name="rg" id="rg" placeholder="Ex.: 12345678" required>
+                                                    <% } %>
+                                                    <div class="invalid-feedback">
+                                                        Por favor, insira um RG válido.
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 mb-2">
+                                                    <label for="shipping_date">Data de Expedição</label>
+                                                    <% if(formData.length > 0) { %>
+                                                        <input type="text" class="form-control" name="shipping_date" id="shipping_date" value="<%= formData[0].shipping_date %>" placeholder="Ex.: 20/10/1990" required>
+                                                    <% } else { %>
+                                                        <input type="text" class="form-control" name="shipping_date" id="shipping_date" placeholder="Ex.: 20/10/1990" required>
+                                                    <% } %>
+                                                    <div class="invalid-feedback">
+                                                        Por favor, insira uma data válida.
+                                                    </div>
+                                                </div>
+                                                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 mb-2">
+                                                    <label for="dispatcher">Orgão Expeditor</label>
+                                                    <% if(formData.length > 0) { %>
+                                                        <input type="text" class="form-control" name="dispatcher" id="dispatcher" value="<%= formData[0].dispatcher %>" placeholder="Ex.: SSP" required>
+                                                    <% } else { %>
+                                                        <input type="text" class="form-control" name="dispatcher" id="dispatcher" placeholder="Ex.: SSP" required>
+                                                    <% } %>
+                                                    <div class="invalid-feedback">
+                                                        Por favor, insira um orgão válido.
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        <div class="form-row">
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <% if(formData.length > 0) { %>
+                                                    <button class="btn btn-primary" type="submit">Atualizar</button>
+                                                <% } else { %>
+                                                    <button class="btn btn-primary" type="submit">Cadastrar</button>
+                                                <% } %>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>           
+            </div>
+            <div class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            Copyright © 2018 Concept. All rights reserved.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="assets/vendor/inputmask/js/jquery.inputmask.bundle.js"></script>
+    <script src="assets/vendor/parsley/parsley.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <script src="assets/libs/js/main-js.js"></script>
+    <script src="assets/libs/js/masks.js"></script> 
+    <script>
+        $('#form').parsley();
+    </script>
+    
+</body>
+ 
+</html>
