@@ -12,11 +12,17 @@ CollaboratorDAO.prototype.insertCollaborator = function(id, collaborator){
     });
 }
 
-CollaboratorDAO.prototype.getCollaborator_by_name = function(name, response){
+CollaboratorDAO.prototype.getCollaborator_by_name = function(name, tag, response){
     this._request.db.collection("Collaborators", function(error, collection){
         var myRegex = new RegExp("^" + name);
         collection.find({"name": {"$regex": myRegex}}).toArray(function(errors, result){
-            response.render('forms/update_collaborator', {list: result});
+            var temp_aux = '';
+            if(tag === 'del'){
+                temp_aux = 'forms/remove_collaborator';
+            } else {
+                temp_aux = 'forms/update_collaborator';
+            }
+            response.render(temp_aux, {list: result});
         });
     });
 }

@@ -17,3 +17,7 @@ module.exports.register_collaborator = function(application, request, response){
     response.redirect('/');
     //, {message: 'Colaborador Cadastrado com Sucesso!', flag: 'colab'}
 }
+
+module.exports.remove_collaborator = function(application, request, response){
+    response.render('forms/remove_collaborator', {list: []});
+}
