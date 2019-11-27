@@ -26,3 +26,19 @@ module.exports.register_career_path = function(application, request, response) {
     carrerPathDAO.insertCarrerPath(formData);
     response.redirect('/');
 }
+
+module.exports.update_career_path = function(application, request, response) {
+    var id = request.query.id;
+    var formData = request.body;
+    console.log("formData: %s", JSON.stringify(formData));
+    var errors = request.validationErrors();
+
+    if(errors) {
+        response.render('register_career_path', {validation: errors, formData: formData});
+        return;
+    }
+
+    var carrerPathDAO = new application.src.models.carrerPathDAO(request);
+    carrerPathDAO.updateCarrerPath(id, formData);
+    response.redirect('/');
+}

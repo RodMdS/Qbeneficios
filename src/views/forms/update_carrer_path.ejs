@@ -56,7 +56,7 @@
                             </li>
                             
                             <li class="nav-item ">
-                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fas fa-address-book"></i>Cadastros</a>
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fas fa-address-book"></i>Cadastros</a>
                                 <div id="submenu-4" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
@@ -73,7 +73,7 @@
                             </li>
 
                             <li class="nav-item ">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-4"><i class="far fa-edit"></i>Atualizar Cadastro</a>
+                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-4"><i class="far fa-edit"></i>Atualizar Cadastro</a>
                                 <div id="submenu-5" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
@@ -137,7 +137,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-8" aria-controls="submenu-6"><i class="fas fa-chart-pie"></i> Grafícos </a>
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-8" aria-controls="submenu-6"><i class="fas fa-chart-pie"></i> Gráficos </a>
                                 <div id="submenu-8" class="collapse submenu" style="">
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
@@ -162,13 +162,13 @@
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
-                            <h2 class="pageheader-title">Cadastro de Novo Cargo</h2>
+                            <h2 class="pageheader-title">Atualizar Cadastro de Planos de Carreira</h2>
                             <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
                                         <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Formulário</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Cadastro de Novo Cargo</li>
+                                        <li class="breadcrumb-item active" aria-current="page">Atualizar Cadastro de Planos de Carreira</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -178,84 +178,76 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
-                                <h5 class="card-header">Informações Gerais</h5>
+                                <h5 class="card-header">Buscar o Plano de Carreira pelo Nome</h5>
                                 <div class="card-body">
-                                    <form class="needs-validation" action="/register_role" method="POST">
+                                    <form class="needs-validation" action="/search_path?tag=upd" method="POST">
                                         <div class="row">
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                                                <label for="name">Nome do Cargo</label>
-                                                <input type="text" class="form-control" name="name" value="<%= formData.name %>" id="name" placeholder="Ex.: Back-end" required>
-                                                <div class="valid-feedback">
-                                                    Parece Bom!
-                                                </div>
+                                            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 mb-2">
+                                                <label for="name">Nome do Plano de Carreira</label>
+                                                <input type="text" class="form-control" name="name" id="name" placeholder="Ex.: Desenvolvedor Back-end" required>
                                             </div>
-                                        </div>
 
-                                        <div class="form-row">
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                                                <label for="description">Descrição</label>
-                                                <textarea class="form-control" name="description" id="description" value="<%= formData.description %>" placeholder="Ex.: Através da manutenção, suporte e acompanhamento de projetos." rows="3" required></textarea>
-                                                <div class="valid-feedback">
-                                                    Parece Bom!
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-row">
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                                                <label for="main_task">Principal Tarefa</label>
-                                                <input type="text" class="form-control" name="main_task" id="main_task" value="<%= formData.main_task %>" placeholder="Ex.: Desenvolver" required>
-                                                <div class="valid-feedback">
-                                                    Parece Bom!
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-row">
-                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
-                                                <label for="salary">Salário</label>
-                                                <input type="number" min="0.000,00" step="0.05" class="form-control" name="salary" id="salary" value="<%= formData.salary %>" placeholder="Ex.: 1.000,00" required>
-                                                <div class="invalid-feedback">
-                                                    Por favor, insira um valor válido.
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
-                                                <label for="main_benefit">Principal Benefício</label>
-                                                <input type="text" class="form-control" name="main_benefit" id="main_benefit" value="<%= formData.main_benefit %>" placeholder="Ex.: Vale Transporte" required>
-                                                <div class="invalid-feedback">
-                                                    Por favor, insira um Benefício válido.
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-row">
-                                            <% if(paths.length > 0) { %>
-                                                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 mb-2">
-                                                    <label for="carrerPath">Plano de Carreira</label>
-                                                    <!--<input type="text" id="getPaths" value="<%= paths %>" hidden>-->
-                                                    <!--<input type="" class="form-control" name="salary" id="carrerPath" value="<%= formData.carrerPath %>" required>
-                                                    <div class="invalid-feedback">
-                                                        Por favor, insira um valor válido.
-                                                    </div>-->
-                                                    <select id="carrerPath" name="carrer_path" class="form-control" required>
-                                                        <% for(var i = 0; i < paths.length; i++) { %>
-                                                            <option value="<%= paths[i]._id %>"><%= paths[i].name %></option>
-                                                        <% } %>
-                                                    </select> 
-                                                </div>
-                                            <% } %>
-                                        </div>
-
-                                        <div class="form-row">
-                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                                <button class="btn btn-primary" type="submit">Cadastrar</button>
+                                            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 mb-2" style="margin-top: 30px;">
+                                                <button class="btn btn-success" type="submit">Buscar</button>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
-                    </div>           
+                    </div> 
+                <% if(path.length > 0) { %>
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Buscar o Plano de Carreira pelo Nome</h5>
+                                <div class="card-body">
+                                    <form class="needs-validation" action="/update_path?id=<%= path[0]._id %>" method="POST">
+                                        <div class="row">
+                                            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12 mb-2">
+                                                <label for="name">Nome do Plano de Carreira</label>
+                                                <input type="text" class="form-control" name="name" id="name" value="<%= path[0].name %>" required>
+                                            </div>
+                                            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12 mb-2" style="margin-top: 30px;">
+                                                <button class="btn btn-success">Atualizar</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <table class="table table-hover">
+                                <thead class="table-danger">
+                                    <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">NOME</th>
+                                    <th scope="col">DESCRIÇÂO</th>
+                                    <th scope="col">PRINCIPAL TAREFA</th>
+                                    <th scope="col">SALÁRIO</th>
+                                    <th scope="col">PRINCIPAL BENEFÍCIO</th>
+                                    <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% for(var i = 0; i < roles.length; i++) { %>
+                                        <tr>
+                                            <th scope="row"><%= i + 1 %></th>
+                                            <td><%= roles[i].name %></td>
+                                            <td><%= roles[i].description %></td>
+                                            <td><%= roles[i].main_task %></td>
+                                            <td><%= roles[i].salary %></td>
+                                            <td><%= roles[i].main_benefit %></td>
+                                            <td><a href="#>">ATUALIZAR</a></td>
+                                        </tr>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                <% } %>           
             </div>
             <div class="footer">
                 <div class="container-fluid">
@@ -278,20 +270,6 @@
     <script src="assets/libs/js/masks.js"></script> 
     <script>
         $('#form').parsley();
-        /*var data = document.getElementById("getPaths").value;
-        var paths = JSON.parse(data);
-        $('#carrerPath').contents().remove();
-        var defaultOption = $('<option/>');
-        defaultOption.attr('label', "Escolha um plano");
-        defaultOption.attr('selected', true);
-        defaultOption.appendTo($('#carrerPath'));
-        for(var j = 0; j < paths.length; j++) {
-            var newOption = $('<option/>');
-            newOption.attr('label', paths[j].name);
-            newOption.attr('value', paths[j].name);
-            console.log(newOption);
-            newOption.appendTo($('#carrerPath'));
-        }*/
     </script>
     
 </body>
